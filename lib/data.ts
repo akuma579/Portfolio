@@ -214,12 +214,6 @@ export const PROJECTS: Project[] = [
     repoUrl: "https://github.com/dgupta98/SER594-Team5-CourseCopilotAI",
     liveUrl: "https://coursecopilotai.vercel.app/",
     highlight: false,
-    team: [
-      { name: "Dipesh Gupta", github: "dgupta98", role: "Backend, RAG pipeline, LLM integration, deployment, CI/CD" },
-      { name: "Anand Kumar", github: "akuma579", role: "Settings pages, password strength checklist, profile UI, professor dashboard" },
-      { name: "Rahul Reddy Chitlar", github: "chitla62", role: "Frontend features, test suite, FastAPI compatibility fixes" },
-      { name: "Vishesh Reddy Lekkala", github: "vlekkal3", role: "Document ingestion integration (post-upload RAG trigger)" },
-    ],
     myRole: "Built the professor and student settings pages, password strength checklist, profile UI, and professor dashboard course card UI.",
   },
   {
@@ -291,32 +285,30 @@ export const EDUCATION = [
 export const CERTIFICATIONS = [
   {
     name: "Develop GenAI Apps with Gemini and Streamlit",
-    issuer: "Google Cloud",
+    issuer: "Google Cloud / Credly",
     icon: "🤖",
     color: "cyan",
+    url: "https://www.credly.com/badges/e71985ec-4ccf-4db4-aa5e-9a59439d35a2/linked_in_profile",
   },
   {
     name: "AWS Cloud Technical Essentials",
-    issuer: "Amazon Web Services",
+    issuer: "Amazon Web Services / Coursera",
     icon: "☁️",
     color: "purple",
+    url: "https://www.coursera.org/account/accomplishments/verify/MV2FLAX2G9C2",
   },
   {
     name: "Introduction to Cloud Computing",
     issuer: "IBM / Coursera",
     icon: "🌐",
     color: "green",
+    url: "https://www.coursera.org/account/accomplishments/verify/NQX4AFGUTDW5",
   },
   {
     name: "Software Engineering Specialization",
     issuer: "University of Alberta / Coursera",
     icon: "⚙️",
     color: "cyan",
-  },
-  {
-    name: "English Proficiency Certificate",
-    issuer: "Duolingo",
-    icon: "📝",
-    color: "purple",
+    url: "https://www.coursera.org/account/accomplishments/specialization/TQDPA5N4NTQ9",
   },
 ];
