@@ -10,8 +10,8 @@ export const SITE = {
   location: "Tempe, Arizona, United States",
   github: "https://github.com/akuma579",
   linkedin: "https://www.linkedin.com/in/anand2804",
-  // Add your resume link here when ready
-  resumeUrl: null as string | null,
+  // Resume PDF placed in /public — set to the file path so the site shows a Resume button
+  resumeUrl: "/Anand_Kumar_FT.pdf" as string | null,
   openTo: [
     "SWE / AI Engineering Internships (2026–27)",
     "Early-Stage Startup Projects",
