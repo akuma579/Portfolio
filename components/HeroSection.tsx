@@ -114,12 +114,11 @@ export default function HeroSection() {
           <span className="gradient-text">Kumar.</span>
         </h1>
 
-        {/* Typing role */}
+        {/* Primary roles (show first three) */}
         <div className="flex items-center gap-2 mb-5 h-9">
           <span className="text-[var(--accent-primary)] font-mono text-sm">→</span>
           <p className="font-mono text-[var(--text-secondary)] text-lg">
-            {displayed}
-            <span className="type-cursor text-[var(--accent-primary)]">|</span>
+            {ROLES.slice(0, 3).join(" \u00B7 ")}
           </p>
         </div>
 
