@@ -1,18 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { SITE } from "@/lib/data";
-import { FileText, ExternalLink, Upload } from "lucide-react";
+import { FileText, ExternalLink } from "lucide-react";
 
 export default function ResumeSection() {
-  const [resumeUrl, setResumeUrl] = useState<string | null>(SITE.resumeUrl);
-  const [editing,   setEditing]   = useState(false);
-  const [inputVal,  setInputVal]  = useState(SITE.resumeUrl ?? "");
-
-  const save = () => {
-    setResumeUrl(inputVal.trim() || null);
-    setEditing(false);
-  };
+  const resumeUrl = SITE.resumeUrl;
 
   return (
     <section id="resume" className="py-16 px-6">
@@ -50,47 +42,12 @@ export default function ResumeSection() {
               >
                 <ExternalLink size={14} /> Resume
               </a>
-              <button
-                onClick={() => setEditing(true)}
-                className="w-full text-xs font-mono text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors py-2"
-              >
-                Update link
-              </button>
             </div>
           ) : (
             <div className="space-y-3">
               <p className="text-sm text-[var(--text-secondary)] mb-3 leading-relaxed">
-                Paste a Google Drive or PDF link to activate the download button.
+                Resume not available.
               </p>
-              <button
-                onClick={() => setEditing(true)}
-                className="btn-primary flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold"
-              >
-                <Upload size={14} /> Add Resume Link
-              </button>
-            </div>
-          )}
-
-          {editing && (
-            <div className="mt-4 space-y-2.5">
-              <input
-                type="url"
-                value={inputVal}
-                onChange={(e) => setInputVal(e.target.value)}
-                placeholder="https://drive.google.com/…"
-                autoFocus
-                className="w-full px-4 py-2.5 rounded-xl text-sm font-mono text-[var(--text-primary)] outline-none transition-colors"
-                style={{
-                  background: "var(--bg-surface)",
-                  border: "1px solid var(--border-medium)",
-                }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "var(--accent-primary)")}
-                onBlur={(e)  => (e.currentTarget.style.borderColor = "var(--border-medium)")}
-              />
-              <div className="flex gap-2">
-                <button onClick={save} className="btn-primary flex-1 py-2.5 rounded-xl text-sm font-semibold">Save</button>
-                <button onClick={() => setEditing(false)} className="btn-outline flex-1 py-2.5 rounded-xl text-sm">Cancel</button>
-              </div>
             </div>
           )}
         </div>
