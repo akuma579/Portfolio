@@ -6,6 +6,8 @@ import { Github, Linkedin, Mail, FileText, MoveDown } from "lucide-react";
 
 const ROLES = [
   "Full-Stack Developer",
+  "AI/ML Engineer",
+  "Cloud Engineer",
   "AI Builder",
   "LangChain Engineer",
   "Next.js Developer",
