@@ -48,7 +48,7 @@ export default function ResumeSection() {
                 rel="noopener noreferrer"
                 className="btn-primary flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold"
               >
-                <ExternalLink size={14} /> View / Download Resume
+                <ExternalLink size={14} /> Resume
               </a>
               <button
                 onClick={() => setEditing(true)}
