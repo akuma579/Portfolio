@@ -139,7 +139,9 @@ export default function HeroSection() {
             View Projects
           </button>
           <a
-            href={`mailto:${SITE.email}`}
+            href={SITE.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-outline px-7 py-3 rounded-full text-sm font-semibold tracking-wide"
           >
             Get in Touch
