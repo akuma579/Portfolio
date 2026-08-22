@@ -24,22 +24,33 @@ export default function HeroSection() {
 
   // Typing animation
   useEffect(() => {
-    const word = ROLES[wordIdx];
-    let t: ReturnType<typeof setTimeout>;
-    if (!deleting && charIdx <= word.length) {
-      t = setTimeout(() => {
-        setDisplayed(word.slice(0, charIdx));
-        setCharIdx((c) => c + 1);
-        if (charIdx === word.length) t = setTimeout(() => setDeleting(true), 2000);
-      }, 75);
-    } else if (deleting && charIdx >= 0) {
-      t = setTimeout(() => {
-        setDisplayed(word.slice(0, charIdx));
-        setCharIdx((c) => c - 1);
-        if (charIdx === 0) { setDeleting(false); setWordIdx((w) => (w + 1) % ROLES.length); }
-      }, 40);
+    const typingSpeed = 75;
+    const deletingSpeed = 40;
+    const pauseBeforeDelete = 2000;
+    const current = ROLES[wordIdx];
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    // Update displayed slice immediately based on charIdx
+    setDisplayed(current.slice(0, Math.max(0, Math.min(charIdx, current.length))));
+
+    if (!deleting) {
+      if (charIdx < current.length) {
+        timer = setTimeout(() => setCharIdx((c) => c + 1), typingSpeed);
+      } else {
+        // word complete, pause then start deleting
+        timer = setTimeout(() => setDeleting(true), pauseBeforeDelete);
+      }
+    } else {
+      if (charIdx > 0) {
+        timer = setTimeout(() => setCharIdx((c) => c - 1), deletingSpeed);
+      } else {
+        // finished deleting, move to next word
+        setDeleting(false);
+        setWordIdx((w) => (w + 1) % ROLES.length);
+      }
     }
-    return () => clearTimeout(t);
+
+    return () => { if (timer) clearTimeout(timer); };
   }, [charIdx, deleting, wordIdx]);
 
   // Mouse tracking spotlight
