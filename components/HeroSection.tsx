@@ -9,9 +9,7 @@ const ROLES = [
   "AI/ML Engineer",
   "Cloud Engineer",
   "AI Builder",
-  "LangChain Engineer",
   "Next.js Developer",
-  "36-Hour Hacker",
 ];
 
 export default function HeroSection() {
